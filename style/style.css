@@ -153,7 +153,9 @@ main{
     flex-direction: column;
     flex: 2;
     align-items: center;
+    max-width: calc(50vw - 100px);
 
+    overflow-y: auto;
     
     
 
