@@ -1,0 +1,232 @@
+body {
+    background-color: rgba(84, 128, 194, 0.562);
+    background-image: url(../components/img/background.png);
+    background-size: 400px;
+    background-blend-mode: luminosity;
+    
+}
+
+.navbar {
+
+    background-color: #9b665b;
+
+    position: absolute; 
+    
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    clip-path: polygon(0 0, 100% 0%, 100% 40%, 50% 100%, 0 40%);
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+
+   
+
+    
+}
+
+.navbar::before {
+    content: ''; /* Essencial para o pseudo-elemento ser renderizado */
+    background-color: #AFAFB1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    box-shadow: 0px 4px 0px rgb(2, 4, 51);
+
+    clip-path: polygon(0 0, 100% 0%, 100% 30%, 50% 80%, 0 30%);
+
+    width: 100%;
+    height: calc(100% - 1px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+
+    
+    
+
+}
+
+#menuUl {
+    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    flex-direction: row;
+    
+
+
+
+}
+
+li{
+    
+    
+    color: white;
+    margin: 20px;
+    list-style: none;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+    
+
+    
+}
+.menu{
+    color: #ff2a0000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.menu:hover{
+    
+    color: white;
+
+
+}
+
+.spycam {
+    
+    
+    width: 80px;
+    height: auto;
+
+    filter: drop-shadow(0 4px 12px rgb(0, 60, 255));
+
+}
+
+
+main{
+    
+    padding: 50px;
+       
+    width: auto;
+    margin: 220px auto ;
+    display: flex;
+    justify-content: space-between; /* Adicionado para espaçar as colunas */
+    flex-direction: row;
+    height: auto;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+
+#postMain{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 80%;
+    height: auto;
+    margin: 220px auto;
+    align-items: center;
+    justify-items:center;
+
+
+
+}
+
+#posts-container{
+    
+    margin: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    align-items: center;
+
+    
+    
+
+    
+}
+
+.post {
+    width: 100%;
+    background-color: #535259;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    
+    
+    margin-bottom: 20px; 
+
+    border-radius: 20px;
+}
+
+/*Abaixo item lateral*/
+
+#sideContent{
+    
+    flex:1;
+    width: auto;
+    background-color: #535259;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    border-radius: 20px;
+}
+
+
+form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+
+}
+
+input, textarea, form [type="submit"]{
+
+    margin-top: 20px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+}
+
+input{
+    width: 500px;
+    height: auto;
+}
+
+textarea{
+    align-self: center;
+    margin: 10px;
+    width: 500px;
+    height: 300px;
+}
+
+form [type="submit"]{
+    padding: 0;
+    margin:0px;
+    width: 500px;
+    height: 50px;
+
+}
+
+form [type="submit"]:hover{
+
+    cursor: pointer;
+}
