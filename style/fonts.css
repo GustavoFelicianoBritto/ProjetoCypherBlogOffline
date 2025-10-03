@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Patriot Normal';
+    src: url('../components/fonts/Patriot-Normal.woff');
+}
+
+@font-face {
+    font-family: Changa Bold;
+    src: url('../components/fonts/Changa-Bold.woff');
+}
+
+@font-face {
+    font-family: Changa Regular;
+    src: url('../components/fonts/Changa-Regular.woff');
+}
