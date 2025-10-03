@@ -31,6 +31,12 @@ window.addEventListener('DOMContentLoaded',function()
 
         // 2. Depois, converte a sintaxe de imagem [img]url[/img] para tags <img>
         // A regex procura por [img]...[/img], captura o conteúdo (a URL) e o substitui.
+        processedBody = processedBody.replace(/I/g, 'i');
+        processedBody = processedBody.replace(/iMG/g, 'img');
+        processedBody = processedBody.replace(/Img/g, 'img');
+        processedBody = processedBody.replace(/IMG/g, 'img');
+
+
         processedBody = processedBody.replace(/\[img\](.*?)\[\/img\]/g, (match, url) => {
             const trimmedUrl = url.trim(); // Remove espaços em branco do início e do fim da URL
             return `<img src="${trimmedUrl}" alt="Imagem do post">`;
