@@ -160,8 +160,11 @@ main{
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
+    
     flex-direction: column;
     align-items: center;
+    
+
     
     
 
@@ -178,6 +181,16 @@ main{
 
     font-family: Changa Regular;
 
+
+}
+
+#posts-container img{
+    align-self: center;
+    justify-self: center;
+    width: 40%;
+    height: auto;
+
+    filter: drop-shadow(0 4px 12px rgb(0, 0, 0));
 
 }
 
@@ -202,6 +215,7 @@ main{
     /* Adicionado para quebrar palavras longas e evitar estouro horizontal */
     overflow-wrap: break-word;
     word-break: break-all;
+    
 }
 
 /*Abaixo item lateral*/

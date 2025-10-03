@@ -25,10 +25,24 @@ window.addEventListener('DOMContentLoaded',function()
 
 
         /*<p class="post-date">Publicado em: ${post.date}</p>*/
-        articleElement.innerHTML= `
-        <h2>${post.title}</h2>
-        <p>${post.body.replace(/\n/g, '<br>')}</p>
+
+        /*troquei as < e > por caracteres parecidos pra o usuario n poder colocar coisa personalizada */
+        let processedBody = post.body.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+        // 2. Depois, converte a sintaxe de imagem [img]url[/img] para tags <img>
+        // A regex procura por [img]...[/img], captura o conteúdo (a URL) e o substitui.
+        processedBody = processedBody.replace(/\[img\](.*?)\[\/img\]/g, (match, url) => {
+            const trimmedUrl = url.trim(); // Remove espaços em branco do início e do fim da URL
+            return `<img src="${trimmedUrl}" alt="Imagem do post">`;
+        });
+        processedBody = processedBody.replace(/\[i\](.*?)\[\/i\]/g, '<i>$1</i>');
+        // 3. Por último, adiciona as quebras de linha
         
+        processedBody = processedBody.replace(/\n/g, '<br>');
+
+        articleElement.innerHTML= `
+        <h2>${post.title.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</h2>
+        <p>${processedBody}</p>
         `;
 
         postscontainer.appendChild(articleElement);
