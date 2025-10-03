@@ -155,7 +155,7 @@ main{
     align-items: center;
     max-width: calc(50vw - 100px);
 
-    overflow-y: auto;
+    
     
     
 
@@ -173,6 +173,10 @@ main{
     margin-bottom: 20px; 
 
     border-radius: 20px;
+
+    /* Adicionado para quebrar palavras longas e evitar estouro horizontal */
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 /*Abaixo item lateral*/

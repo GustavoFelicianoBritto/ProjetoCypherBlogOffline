@@ -29,7 +29,7 @@ document.getElementById('form-post').addEventListener('submit', function(event)
 
 
 
-
+    window.location.href = 'index.html';
     
 
     
