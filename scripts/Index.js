@@ -26,23 +26,20 @@ window.addEventListener('DOMContentLoaded',function()
 
         /*<p class="post-date">Publicado em: ${post.date}</p>*/
 
-        /*troquei as < e > por caracteres parecidos pra o usuario n poder colocar coisa personalizada */
+        
         let processedBody = post.body.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-        // 2. Depois, converte a sintaxe de imagem [img]url[/img] para tags <img>
-        // A regex procura por [img]...[/img], captura o conteúdo (a URL) e o substitui.
-        processedBody = processedBody.replace(/I/g, 'i');
-        processedBody = processedBody.replace(/iMG/g, 'img');
-        processedBody = processedBody.replace(/Img/g, 'img');
-        processedBody = processedBody.replace(/IMG/g, 'img');
-
-
-        processedBody = processedBody.replace(/\[img\](.*?)\[\/img\]/g, (match, url) => {
+        
+        
+        processedBody = processedBody.replace(/\#(.*?)\#/gi, (match, url) => {
             const trimmedUrl = url.trim(); // Remove espaços em branco do início e do fim da URL
             return `<img src="${trimmedUrl}" alt="Imagem do post">`;
         });
-        processedBody = processedBody.replace(/\[i\](.*?)\[\/i\]/g, '<i>$1</i>');
-        // 3. Por último, adiciona as quebras de linha
+
+
+        processedBody = processedBody.replace(/\_(.*?)\_/g, '<i>$1</i>'); // Itálico com _texto_
+        processedBody = processedBody.replace(/\*(.*?)\*/g, '<b>$1</b>'); // Negrito com *texto*
+        processedBody = processedBody.replace(/\~(.*?)\~/g, '<s>$1</s>'); // tachado com ~texto~
+        
         
         processedBody = processedBody.replace(/\n/g, '<br>');
 
